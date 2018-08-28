@@ -1,16 +1,20 @@
-print('Введите трехзначное число')
-a = input('Ввод числа: ')
-
-mult = 1
-summa = 0
-
-for x in a:
-    summa += int(x)
-
-
-for z in a:
-    mult *= int(z)
-
-print(f'Сумма чисел равна {summa:.3f}')
-print(f'Произведение чисел равно {mult:.3f}')
-
+while True:
+    s = input("Введите знак (+,-,*,/): ")
+    if s == '0':
+        break
+    if s in ('+', '-', '*', '/'):
+        x = float(input("x="))
+        y = float(input("y="))
+        if s == '+':
+            print("%.2f" % (x + y))
+        elif s == '-':
+            print("%.2f" % (x - y))
+        elif s == '*':
+            print("%.2f" % (x * y))
+        elif s == '/':
+            if y != 0:
+                print("%.2f" % (x / y))
+            else:
+                print("Делить на ноль нельзя!!!")
+    else:
+        print("Неверный знак операции!")

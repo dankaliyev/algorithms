@@ -1,5 +1,11 @@
-year = int(input('Введите год: '))
-if year % 4 != 0 or (year % 100 == 0 and year % 400 != 0):
-    print(f'{year} - обычный год')
-else:
-    print(f'{year} -високосный год')
+n = int(input("Сколько будет чисел? "))
+d = int(input("Какую цифру считать? "))
+count = 0
+for i in range(1, n + 1):
+    m = int(input("Число " + str(i) + ": "))
+    while m > 0:
+        if m % 10 == d:
+            count += 1
+        m = m // 10
+
+print(f'Было введено {count} раз цифра {d}')
