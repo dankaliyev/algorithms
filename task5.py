@@ -1,9 +1,18 @@
-print('ASCII Table')
-start = 32
-end = 127
-for v in range(start, end + 1):
-    if (start - v) % 10 == 0:
-        print("")
-    print(f'{v} - {chr(v)} |', end=' ')
+from random import random
 
-print(ord('a'))
+N = 15
+arr = []
+for i in range(N):
+    arr.append(int(random() * 100) - 50)
+print(arr)
+
+i = 0
+index = -1
+while i < N:
+    if arr[i] < 0 and index == -1:
+        index = i
+    elif arr[i] < 0 and arr[i] > arr[index]:
+        index = i
+    i += 1
+
+print(f'{index} : {arr[index]}')

@@ -1,20 +1,9 @@
-while True:
-    s = input("Введите знак (+,-,*,/): ")
-    if s == '0':
-        break
-    if s in ('+', '-', '*', '/'):
-        x = float(input("x="))
-        y = float(input("y="))
-        if s == '+':
-            print("%.2f" % (x + y))
-        elif s == '-':
-            print("%.2f" % (x - y))
-        elif s == '*':
-            print("%.2f" % (x * y))
-        elif s == '/':
-            if y != 0:
-                print("%.2f" % (x / y))
-            else:
-                print("Делить на ноль нельзя!!!")
-    else:
-        print("Неверный знак операции!")
+a = [0] * 8
+for i in range(2, 100):
+    for j in range(2, 10):
+        if i % j == 0:
+            a[j - 2] += 1
+i = 0
+while i < len(a):
+    print(i + 2, ' - ', a[i])
+    i += 1

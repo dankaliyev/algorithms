@@ -1,7 +1,26 @@
-n = int(input('Введите натуральное число: '))
-s = 0
-for i in range(1, n + 1):
-    s += i
-m = n * (n + 1) // 2
-print(f'1+2+...+n = {s}')
-print(f'n(n+1)/2 = {m}')
+from random import random
+N = 10
+a = []
+for i in range(N):
+    a.append(int(random() * 100))
+    print(f'{a[i]:3d}', end='')
+print()
+
+if a[0] > a[1]:
+    min1 = 0
+    min2 = 1
+else:
+    min1 = 1
+    min2 = 0
+
+for i in range(2, N):
+    if a[i] < a[min1]:
+        b = min1
+        min1 = i
+        if a[b] < a[min2]:
+            min2 = b
+    elif a[i] < a[min2]:
+        min2 = i
+
+print(f'№{min1 + 1:3d}:{a[min1]:3d}')
+print(f'№{min2 + 1:3d}:{a[min2]:3d}')

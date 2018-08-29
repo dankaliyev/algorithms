@@ -1,14 +1,23 @@
-n = int(input('Введите число: '))
-max_s = 0
-max_m = 0
-while n != 0:
-    m = n
-    s = 0
-    while n > 0:
-        s += n % 10
-        n //= 10
-    if s > max_s:
-        max_s = s
-        max_m = m
-    n = int(input('Введите число или введите 0 для завершения: '))
-print(f'Число {max_m} имеет максимальную сумму цифр: {max_s}')
+from random import random
+
+M = 10
+N = 5
+a = []
+for i in range(N):
+    b = []
+    for j in range(M):
+        n = int(random() * 200)
+        b.append(n)
+        print(f'{n:4d}', end='')
+    a.append(b)
+    print()
+
+mx = -1
+for j in range(M):
+    mn = 200
+    for i in range(N):
+        if a[i][j] < mn:
+            mn = a[i][j]
+    if mn > mx:
+        mx = mn
+print(f'Максимальный среди минимальных: {mx}')

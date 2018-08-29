@@ -1,11 +1,16 @@
-n = int(input("Сколько будет чисел? "))
-d = int(input("Какую цифру считать? "))
-count = 0
-for i in range(1, n + 1):
-    m = int(input("Число " + str(i) + ": "))
-    while m > 0:
-        if m % 10 == d:
-            count += 1
-        m = m // 10
+M = 5
+N = 4
+a = []
+for i in range(N):
+    b = []
+    s = 0
+    print(f'{i}-я строка:')
+    for j in range(M - 1):
+        n = int(input())
+        s += n
+        b.append(n)
+    b.append(s)
+    a.append(b)
 
-print(f'Было введено {count} раз цифра {d}')
+for i in a:
+    print(i)
